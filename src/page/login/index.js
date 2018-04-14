@@ -2,9 +2,11 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-14 01:01:23
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-14 01:01:59
+* @Last Modified time: 2018-04-14 23:26:08
 */
 
 'use strict';
 
-console.log('hello login');
+// console.log('hello login');
+
+require('../module.js');
