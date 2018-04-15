@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-15 11:13:29
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-15 17:58:34
+* @Last Modified time: 2018-04-15 22:59:52
 */
 
 'use strict';
@@ -81,7 +81,7 @@ var _mm = {
     },
     // 统一登录处理
     doLogin : function(){
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome : function(){
         window.location.href = './index.html';
