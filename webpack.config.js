@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-14 00:49:22
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-15 01:05:13
+* @Last Modified time: 2018-04-15 20:59:35
 */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -13,10 +13,11 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV);
 
 // 获取html-webpac-plugin参数的方法
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name, title){
     return {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
+        title: title,
         inject: true,
         hash: true,
         chunks: ['common', name]
@@ -27,7 +28,8 @@ var config = {
     entry: {
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
-        'login': ['./src/page/login/index.js']
+        'login': ['./src/page/login/index.js'],
+        'result': ['./src/page/result/index.js']
     },
     output: {
         path: __dirname + '/dist',
@@ -44,6 +46,16 @@ var config = {
             { test: /\.string$/, loader: 'html-loader'}
         ]
     },
+    resolve: {
+        alias: {
+            node_modules: __dirname + '/node_modules',
+            util: __dirname + '/src/util',
+            page: __dirname + '/src/page',
+            sevice: __dirname + '/src/sevice',
+            image: __dirname + '/src/image',
+            service: __dirname + '/src/service'
+        }
+    },
     plugins: [
         // 独立通用模块到js/base.js
         new webpack.optimize.CommonsChunkPlugin({
@@ -53,8 +65,9 @@ var config = {
         // 把css单独打包到文件里
         new ExtractTextPlugin('css/[name].css'),
         // html模板的处理
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };
 
