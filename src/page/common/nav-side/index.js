@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-15 18:15:11
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-15 18:49:40
+* @Last Modified time: 2018-04-21 15:18:21
 */
 'use strict';
 require('./index.css');
@@ -15,7 +15,7 @@ var navSide = {
         navList : [
             {name: 'user-center', desc: '个人中心', href: './user-center.html'},
             {name: 'order-list', desc: '我的订单', href: './order-list.html'},
-            {name: 'pass-update', desc: '修改密码', href: './pass-update.html'},
+            {name: 'user-pass-update', desc: '修改密码', href: './user-pass-update.html'},
             {name: 'about', desc: '关于MMall', href: './about.html'}
         ]
     },

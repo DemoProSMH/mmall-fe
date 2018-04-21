@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-15 14:27:27
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-15 18:01:34
+* @Last Modified time: 2018-04-21 12:19:58
 */
 /*通用头部导航*/
 .header .logo{
@@ -13,6 +13,7 @@
     font-size: 36px;
     color: #c60023;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .header .search-con{
@@ -32,4 +33,15 @@
     position: absolute; /*不设置位置时会以上一元素的末尾作为起始位置*/
     height: 44px;
     width: 80px;
+}
+
+/*面包屑导航*/
+.crumb{
+    margin-bottom: 15px;
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #888;
+    font-size: 14px;
+    border-top: 2px solid #c60023;
 }

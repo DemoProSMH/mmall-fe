@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-15 12:46:43
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-15 13:31:06
+* @Last Modified time: 2018-04-21 12:41:09
 */
 /*css reset*/
 *{
@@ -32,6 +32,24 @@ input[type='checkbox']{
     width: 1080px;
     margin: auto;
     position: relative;
+    overflow: hidden;
+}
+
+/*panel*/
+.panel{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding: 10px;
     overflow: hidden;
 }
 
