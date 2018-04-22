@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-15 14:27:34
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-15 18:03:51
+* @Last Modified time: 2018-04-22 00:27:13
 */
 
 'user strict';
@@ -11,6 +11,7 @@ var _mm     = require('util/mm.js');
 // 通用页面头部
 var header = {
     init : function(){
+        this.onLoad();
         this.bindEvent();
     },
     onLoad : function(){
@@ -38,7 +39,7 @@ var header = {
         var keyword = $.trim($('#search-input').val());
         // 如果提交的时候有keyword，正常跳转到list页
         if(keyword) {
-            window.location.href = './list?keyword=' + keyword;
+            window.location.href = './list.html?keyword=' + keyword;
         }
         // 如果keyword为空，直接返回首页
         else{
