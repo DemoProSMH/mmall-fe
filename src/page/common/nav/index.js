@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-15 14:01:37
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-22 22:45:27
+* @Last Modified time: 2018-04-25 00:22:19
 */
 
 'use strict';
@@ -15,6 +15,7 @@ var nav = {
     init : function(){
         this.bindEvent();
         this.loadUserInfo();
+        this.loadCartCount();
         // this.loadCartCount();
         return this;
     },
@@ -45,14 +46,14 @@ var nav = {
             // do nothing
         });
     },
-    // // 加载购物车数量
-    // loadCartCount : function(){
-    //     _cart.getCartCount(function(res){
-    //         $('.nav .cart-count').text(res || 0);
-    //     }, function(errMsg){
-    //         $('.nav .cart-count').text(0);
-    //     });
-    // }
+    // 加载购物车数量
+    loadCartCount : function(){
+        _cart.getCartCount(function(res){
+            $('.nav .cart-count').text(res || 0);
+        }, function(errMsg){
+            $('.nav .cart-count').text(0);
+        });
+    }
 };
 
 module.exports = nav.init();
