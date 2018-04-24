@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-22 22:33:16
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-24 20:22:19
+* @Last Modified time: 2018-04-25 00:40:35
 */
 'use strict';
 
@@ -72,6 +72,8 @@ var page = {
         // 请求detail地址信息
         _product.getProductDetail(this.data.productId, function(res){
             _this.filter(res);
+            // 缓存住detail的数据
+            _this.data.detailInfo = res;
             html = _mm.renderHtml(templateIndex, res);
             $('.page-wrap').html(html);
         }, function(errMsg){
