@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-22 22:33:16
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-25 00:25:11
+* @Last Modified time: 2018-04-25 23:56:10
 */
 'use strict';
 
@@ -127,7 +127,7 @@ var page = {
         $(document).on('click', '.btn-submit', function(){
             // 判断总价大于0，进行提交
             if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             }else{
                 _mm.errorTips('请选择商品后再提交');
             }
