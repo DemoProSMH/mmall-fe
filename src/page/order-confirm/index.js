@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-25 23:57:07
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-27 00:39:58
+* @Last Modified time: 2018-05-05 00:27:34
 */
 'use strict';
 
@@ -14,6 +14,7 @@ var _order = require('service/order-service.js');
 var _address = require('service/address-service.js');
 var templateAddress = require('./address-list.string');
 var templateProduct = require('./product-list.string');
+var addressModal = require('./address-modal.js');
 
 var page = {
     data: {
@@ -49,6 +50,30 @@ var page = {
             else{
                 _mm.errorTips('请选择地址后再提交');
             }
+        });
+        // 地址的添加
+        $(document).on('click', '.address-add', function(){
+            addressModal.show({
+                isUpdate: false,
+                onSuccess: function(){
+                    _this.loadAddressList();
+                }
+            });
+        });
+        // 地址的编辑
+        $(document).on('click', '.address-update', function(){
+            var shippingId = $(this).parents('.address-item').data('id');
+            _address.getAddress(shippingId, function(res){
+                addressModal.show({
+                    isUpdate: true,
+                    data: res,
+                    onSuccess: function(){
+                        _this.loadAddressList();
+                    }
+                })
+            }, function(errMsg){
+                _mm.errorTips(errMsg);
+            });
         });
     },
     // 加载地址列表

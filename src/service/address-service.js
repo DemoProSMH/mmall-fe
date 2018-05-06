@@ -2,7 +2,7 @@
 * @Author: 761591766@qq.com
 * @Date:   2018-04-26 23:44:54
 * @Last Modified by:   761591766@qq.com
-* @Last Modified time: 2018-04-27 00:00:30
+* @Last Modified time: 2018-05-05 00:29:21
 */
 'use strict';
 
@@ -19,7 +19,27 @@ var _address = {
             success: resolve,
             error: reject
         });
-    }
+    },
+    // 新建收件人
+    save: function(addressInfo, resolve, reject){
+        _mm.request({
+            url: _mm.getServerUrl('/shipping/add.do'),
+            data: addressInfo,
+            success: resolve,
+            error: reject
+        });
+    },
+    //获取单条收件人信息
+    getAddress: function(shippingId, resolve, reject){
+        _mm.request({
+            url: _mm.getServerUrl('/shipping/select.do'),
+            data: {
+                shippingId: shippingId
+            },
+            success: resolve,
+            error: reject
+        });
+    } 
 
 }
 
